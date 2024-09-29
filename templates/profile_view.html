@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>{{ user.username }}'s Profile</h2>
+                    <a href="{% url 'edit_profile' %}" class="btn btn-primary btn-sm float-end">Edit Profile</a>
+                </div>
+
+                <div class="card-body">
+                    <h3>Biography</h3>
+                    <p>{{ profile.bio }}</p>
+                    
+                    <hr>
+                    
+                    <h3>Skills</h3>
+                    <ul class="card-body">
+                        <li class="list-group-item">{{ profile.skills }}</li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Contact Information</h3>
+                    <p>{{ profile.contact_details }}</p>
+
+                    <hr>
+
+                    <!-- <h3>Work Experience</h3>
+                    <ul class="list-group mb-3">
+                        {% for work_experience in work_experiences %}
+                            <li class="list-group-item">
+                                <strong>{{ work_experience.job_title }}</strong> at <strong>{{ work_experience.company_name }}</strong><br>
+                                <span>{{ work_experience.start_date }} - {% if work_experience.end_date %}{{ work_experience.end_date }}{% else %}Present{% endif %}</span><br>
+                                <span>{{ work_experience.description }}</span>
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item">No work experience added.</li>
+                        {% endfor %}
+                    </ul>
+
+                    <h3>Education</h3>
+                    <ul class="list-group mb-3">
+                        {% for education in educations %}
+                            <li class="list-group-item">
+                                <strong>{{ education.degree }}</strong> from <strong>{{ education.institution }}</strong><br>
+                                <span>{{ education.start_date }} - {% if education.end_date %}{{ education.end_date }}{% else %}Present{% endif %}</span>
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item">No education details added.</li>
+                        {% endfor %}
+                    </ul>
+
+                    <h3>Certifications</h3>
+                    <ul class="list-group mb-3">
+                        {% for certification in certifications %}
+                            <li class="list-group-item">
+                                <strong>{{ certification.name }}</strong> from <strong>{{ certification.institution }}</strong><br>
+                                <span>Date received: {{ certification.date_received }}</span>
+                            </li>
+                        {% empty %}
+                            <li class="list-group-item">No certifications added.</li>
+                        {% endfor %}
+                    </ul> -->
+
+                    <!-- <h3>Projects</h3>
+                    <div class="projects">
+                        {% for project in projects %}
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="{{ project.image.url }}" class="img-fluid rounded-start" alt="{{ project.title }}">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ project.title }}</h5>
+                                            <p class="card-text">{{ project.description }}</p>
+                                            <a href="{{ project.link }}" target="_blank" class="btn btn-info">View Project</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p>No projects added yet.</p>
+                        {% endfor %}
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

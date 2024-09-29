@@ -1,0 +1,26 @@
+/* Custom portfolio styles */
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.card-body h3 {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+ul.list-group li {
+    font-size: 1rem;
+}
+
+.projects img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.btn-info {
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+}
+

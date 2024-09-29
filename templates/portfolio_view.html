@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}"></head>
+<body>
+    <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="text-center">Portfolio</h1>
+            <a href="{% url 'profile_view' %}" class="btn btn-primary">Profile</a>
+        </div>
+
+        <!-- Work Experience Section -->
+        <section class="my-5">
+            <h2 class="mb-4">Work Experience</h2>
+            <div class="row">
+                {% for work_experience in work_experiences %}
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ work_experience.job_title }} at {{ work_experience.company_name }}</h5>
+                                <p class="card-text">{{ work_experience.description }}</p>
+                                <p class="card-text"><small class="text-muted">{{ work_experience.start_date }} - {% if work_experience.end_date %}{{ work_experience.end_date }}{% else %}Present{% endif %}</small></p>
+                                <a href="{% url 'edit_work_experience' work_experience.pk %}" class="btn btn-outline-secondary btn-sm">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="{% url 'add_work_experience' %}" class="btn btn-outline-primary">Add Work Experience</a>
+        </section>
+
+        <!-- Education Section -->
+        <section class="my-5">
+            <h2 class="mb-4">Education</h2>
+            <div class="row">
+                {% for education in educations %}
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ education.degree }} from {{ education.institution }}</h5>
+                                <p class="card-text"><small class="text-muted">{{ education.start_date }} - {% if education.end_date %}{{ education.end_date }}{% else %}Present{% endif %}</small></p>
+                                <a href="{% url 'edit_education' education.pk %}" class="btn btn-outline-secondary btn-sm">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="{% url 'add_education' %}" class="btn btn-outline-primary">Add Education</a>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="my-5">
+            <h2 class="mb-4">Certifications</h2>
+            <div class="row">
+                {% for certification in certifications %}
+                    <div class="col-md-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ certification.name }} from {{ certification.institution }}</h5>
+                                <p class="card-text">Date received: {{ certification.date_received }}</p>
+                                <a href="{% url 'edit_certification' certification.pk %}" class="btn btn-outline-secondary btn-sm">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="{% url 'add_certification' %}" class="btn btn-outline-primary">Add Certification</a>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="my-5">
+            <h2 class="mb-4">My Projects</h2>
+            <div class="mb-3">
+                <a href="{% url 'showcase_view' %}" class="btn btn-success">View All Projects</a>
+                <a href="{% url 'add_project' %}" class="btn btn-outline-primary">Add New Project</a>
+            </div>
+            <div class="row">
+                {% for project in projects %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ project.title }}</h5>
+                                <p class="card-text">{{ project.description }}</p>
+                                <a href="{% url 'edit_project' project.id %}" class="btn btn-outline-secondary">Edit</a>
+                                <a href="{% url 'delete_project' project.id %}" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

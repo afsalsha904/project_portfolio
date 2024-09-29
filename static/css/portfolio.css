@@ -1,0 +1,148 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    color: #333; /* Darker text for readability */
+}
+
+/* Heading Styles */
+h1, h2, h3 {
+    font-weight: 600;
+    color: #343a40; /* Bootstrap's darker gray */
+}
+
+/* Custom Button Styling */
+.btn-primary {
+    background-color: #5a67d8; /* Elegant purple color */
+    border-color: #4c51bf;
+}
+
+.btn-primary:hover {
+    background-color: #4c51bf;
+    border-color: #434190;
+}
+
+.btn-outline-primary {
+    color: #5a67d8;
+    border-color: #5a67d8;
+}
+
+.btn-outline-primary:hover {
+    background-color: #5a67d8;
+    color: #fff;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #343a40;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+/* Project Image Styling */
+.card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover;
+}
+
+/* Section Headings */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #5a67d8;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: #5a67d8;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #4c51bf;
+    text-decoration: none;
+}
+
+/* Projects Section */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Add custom spacing */
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+/* Custom Colors */
+.bg-primary {
+    background-color: #5a67d8 !important;
+}
+
+.text-primary {
+    color: #5a67d8 !important;
+}
+
+.text-secondary {
+    color: #6c757d !important;
+}
